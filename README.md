@@ -4,6 +4,14 @@ Argo CD UI extension that displays vulnerability report data from [Trivy](https:
 
 `Trivy` creates a vulnerability report Kubernetes resource with the results of a security scan. The UI extension then parses the report data and displays it as a grid and dashboard viewable in Pod resources within the Argo CD UI.
 
+## Features
+
+- ✅ **Universal namespace support** - Works with any Kubernetes namespace
+- ✅ **Smart fallback mechanism** - Uses parentRefs for reliable VulnerabilityReport matching
+- ✅ **Clean interface** - No debug logs in production
+- ✅ **Multiple resource types** - Supports Pod, ReplicaSet, StatefulSet, CronJob
+- ✅ **Dynamic discovery** - Automatically finds VulnerabilityReports regardless of naming convention
+
 <img src="./docs/table.png" width="85%" display="inline-flex"/> <img alt="vulnerabilities dashboard" src="./docs/dashboard.png" width="85%"/>
 
 ## Prerequisites
@@ -26,11 +34,11 @@ server:
     extensionList:
       - name: extension-trivy
         env:
-          # URLs used in example are for the latest release, replace with the desired version if needed
+          # URLs for Shipay's enhanced version
           - name: EXTENSION_URL
-            value: https://github.com/mziyabo/argocd-trivy-extension/releases/latest/download/extension-trivy.tar
+            value: https://github.com/shipay-plataforma/argocd-trivy-extension/releases/latest/download/extension-trivy.tar
           - name: EXTENSION_CHECKSUM_URL
-            value: https://github.com/mziyabo/argocd-trivy-extension/releases/latest/download/extension-trivy_checksums.txt
+            value: https://github.com/shipay-plataforma/argocd-trivy-extension/releases/latest/download/extension-trivy_checksums.txt
 ```
 
 ### Kustomize
@@ -49,11 +57,11 @@ spec:
         - name: extension-trivy
           image: quay.io/argoprojlabs/argocd-extension-installer:v0.0.1
           env:
-          # URLs used in example are for the latest release, replace with the desired version if needed
+          # URLs for Shipay's enhanced version
           - name: EXTENSION_URL
-            value: https://github.com/mziyabo/argocd-trivy-extension/releases/latest/download/extension-trivy.tar
+            value: https://github.com/shipay-plataforma/argocd-trivy-extension/releases/latest/download/extension-trivy.tar
           - name: EXTENSION_CHECKSUM_URL
-            value: https://github.com/mziyabo/argocd-trivy-extension/releases/latest/download/extension-trivy_checksums.txt
+            value: https://github.com/shipay-plataforma/argocd-trivy-extension/releases/latest/download/extension-trivy_checksums.txt
           volumeMounts:
             - name: extensions
               mountPath: /tmp/extensions/

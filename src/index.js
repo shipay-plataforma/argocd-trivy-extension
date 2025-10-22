@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Version bump for cache invalidation
-window.EXTENSION_VERSION = '0.2.12';
+window.EXTENSION_VERSION = '0.1.0';
 import './index.css';
 import { Tab, Tabs } from "@mui/material";
 import DataGrid from './components/grid/vulnerability-report';
