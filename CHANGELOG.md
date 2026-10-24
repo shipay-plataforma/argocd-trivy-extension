@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+- Fix: externalize `react/jsx-runtime` (`ReactJSXRuntime`) so the extension loads on Argo CD 3.5+ (React 19). Builds from this version require Argo CD 3.5 or newer.
+
 ## v0.2.1 2024-05-13
 
 - Fix: sorting order for severity column
