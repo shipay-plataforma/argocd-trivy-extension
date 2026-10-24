@@ -1,1 +1,1 @@
-2e1b8ac65344387401812978fcc1aaf19dfedb47692e489f61d716fdb8062b7f  extension-trivy.tar
+4a1b0cb9b513a3906292ab1404aeccb58de2ae374a4f8d6eb647f9197be165af  extension-trivy.tar
